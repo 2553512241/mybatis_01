@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zhidi.entity.Dept">
+
+    <!--插入语句-->
+    <insert id="add" parameterType="com.zhidi.entity.Dept">
+        insert into dept (dname,loc) values (#{dname}, #{loc})
+    </insert>
+
+    <!--删除-->
+    <delete id="delete">
+        delete from dept where deptno=#{deptno}
+    </delete>
+
+    <!--修改-->
+    <update id="edit" parameterType="com.zhidi.entity.Dept">
+        update dept set dname=#{dname},loc=#{loc} where deptno=#{deptno}
+    </update>
+
+    <!--查询-->
+    <select id="query" resultType="com.zhidi.entity.Dept">
+        select * from dept
+    </select>
+</mapper>
